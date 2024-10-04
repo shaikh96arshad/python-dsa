@@ -29,5 +29,29 @@ def check_condition(array,condition):
             
     return True
 
-result = is_monotone(array=[4,3,4])
-print(result)
+# result = is_monotone(array=[4,3,4])
+# print(result)
+
+
+# optimal solution
+def monotonic_array(array):
+    n = len(array)
+    if n == 0: return True
+
+    first = array[0]
+    last = array[n-1]
+
+    if first > last:
+        # MD or array not monotonic
+        for k in range(n-1):
+            if array[k] < array[k+1]: return False
+    elif first == last:
+        for k in range(n-1):
+            if array[k]!= array[k+1]: return False
+    else:
+        # MI or not M
+        for k in range(n-1):
+            if array[k] > array[k+1] : return False
+    return True
+
+print(monotonic_array([1,2,4,5,2]))
