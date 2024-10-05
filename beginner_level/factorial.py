@@ -8,3 +8,12 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 print(factorial(5))
+
+
+def fact_1(n):
+    fact = 1
+    for i in range(1,n+1):
+        fact = fact * i
+    return fact
+
+print(fact_1(5))
