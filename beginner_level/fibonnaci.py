@@ -10,14 +10,11 @@ def fibbonaci(n):
         return seq
     
     def helper(curr,n):
-
         print(curr,n)
         seq.append(sum(seq[-2:]))
         if n == curr:
             return 
-        
         return helper(curr+1,n)
-    # return 
     helper(1,n)
     return seq
     
